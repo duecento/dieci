@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const email = ["hello", "@", "dieciai", ".com"].join("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,7 +27,9 @@ export default function Contact() {
           <div className="mt-8 space-y-3 text-sm text-muted">
             <p>
               <span className="font-medium text-foreground">Email: </span>
-              hello@dieciai.com
+              <a href={`mailto:${email}`} className="cursor-pointer hover:text-foreground">
+                {email}
+              </a>
             </p>
           </div>
         </div>
