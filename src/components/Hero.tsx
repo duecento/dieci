@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Your website — better with AI
+            We help your NI business grow with AI
           </h1>
 
           <p className="mt-5 max-w-xl text-xl font-medium leading-snug text-white/95">
