@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="glass mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
             <Sparkle className="h-4 w-4 animate-float-slow" />
-            AI-assisted development studio
+            AI-assisted development studio · Belfast, Northern Ireland
           </div>
 
           <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -67,11 +67,12 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-xl font-medium leading-snug text-white/95">
-            We build/improve your website, apps, and systems{" "}
+            Local business expertise, paired with{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent">
-              faster and smarter
+              AI-supported development
             </span>
-            , with AI at the core.
+            , to help Belfast and Northern Ireland businesses take a leap
+            forward.
           </p>
 
           <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/80">
