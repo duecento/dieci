@@ -15,7 +15,7 @@ const PROJECTS = [
     name: "GallowareOS",
     tag: "System integration platform",
     description:
-      "A systems-level platform integrating operational tooling and automation, built for reliability and long-term maintainability.",
+      "Website created from scratch for an upcoming Linux-based OS flavour.",
   },
 ];
 
