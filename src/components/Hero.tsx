@@ -57,7 +57,7 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-16">
         <div className="max-w-2xl">
-          <div className="glass mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/35 px-4 py-1.5 text-sm font-semibold text-white shadow-sm backdrop-blur-md [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
             <Sparkle className="h-4 w-4 animate-float-slow" />
             AI-assisted development studio · Belfast, Northern Ireland
           </div>
@@ -81,13 +81,13 @@ export default function Hero() {
             already run.
           </p>
 
-          <div className="glass mt-6 inline-flex max-w-lg items-start gap-3 rounded-2xl bg-white/10 px-4 py-3">
+          <div className="mt-6 inline-flex max-w-lg items-start gap-3 rounded-2xl border border-white/15 bg-black/35 px-4 py-3 backdrop-blur-md">
             <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-emerald-600 text-white">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M20 6L9 17l-5-5" />
               </svg>
             </span>
-            <p className="text-sm leading-snug text-white/90">
+            <p className="text-sm leading-snug text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
               <span className="font-semibold text-white">Decades of hands-on experience as local developers</span>
               {" "}— combined with AI, it&apos;s the best recipe for successful projects.
             </p>
