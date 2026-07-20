@@ -1,17 +1,38 @@
 @import "tailwindcss";
 
+/*
+ * ── Dieci AI palette ──────────────────────────────────────────────
+ * Single source of truth for the brand. To rebrand or retheme,
+ * only these variables need to change — every component references
+ * them (directly or via the utility classes below), nothing hardcodes
+ * its own colors.
+ *
+ * --brand-1/2/3   the signature gradient (used for CTAs, highlighted
+ *                 text, icon chips, card headers — anything that
+ *                 should read as "Dieci AI").
+ * --ai-accent     one accent color reserved for "AI moments" only
+ *                 (sparkles, small AI-related badges/tags).
+ * --dark-*        the palette for the one deliberately dark section
+ *                 (Portfolio), so light and dark sections share hues.
+ */
 :root {
   --background: #f5f5f7;
   --surface: #ffffff;
   --foreground: #1d1d1f;
   --muted: #56565c;
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --accent: #10b981;
-  --pink: #ec4899;
-  --amber: #f59e0b;
-  --sky: #0ea5e9;
   --border: #e4e4e9;
+
+  --brand-1: #4f46e5;
+  --brand-2: #7c3aed;
+  --brand-3: #c026d3;
+
+  --ai-accent: #f59e0b;
+  --ai-accent-dark: #d97706;
+
+  --dark-bg: #0d0d14;
+  --dark-surface: #17161f;
+  --dark-border: rgba(255, 255, 255, 0.1);
+  --dark-muted: #a3a3b0;
 }
 
 @theme inline {
@@ -19,13 +40,25 @@
   --color-surface: var(--surface);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-accent: var(--accent);
-  --color-pink: var(--pink);
-  --color-amber: var(--amber);
-  --color-sky: var(--sky);
   --color-border: var(--border);
+
+  --color-brand-1: var(--brand-1);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --color-ai-accent: var(--ai-accent);
+  --color-ai-accent-dark: var(--ai-accent-dark);
+
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-border: var(--dark-border);
+  --color-dark-muted: var(--dark-muted);
+
+  /* Back-compat aliases so existing bg-primary / from-primary utilities
+     keep working while still resolving to the single brand token. */
+  --color-primary: var(--brand-1);
+  --color-primary-dark: var(--brand-2);
+  --color-accent: var(--ai-accent);
+
   --font-heading: var(--font-outfit);
   --font-sans: var(--font-work-sans);
 }
@@ -42,6 +75,45 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Dark-tinted glass, for overlays on top of photos */
+.glass-dark {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* The one signature gradient. Applying it consistently (rather than a
+   different gradient per component) is what makes it read as a brand. */
+.bg-gradient-brand {
+  background-image: linear-gradient(135deg, var(--brand-1), var(--brand-2), var(--brand-3));
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(90deg, var(--brand-1), var(--brand-2), var(--brand-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Lightened version of the brand gradient, for text over dark photos
+   where the saturated brand hues alone would lack contrast. */
+.text-gradient-brand-light {
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--brand-1) 55%, white),
+    color-mix(in srgb, var(--brand-2) 55%, white),
+    color-mix(in srgb, var(--brand-3) 55%, white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.border-gradient-brand {
+  border-image: linear-gradient(135deg, var(--brand-1), var(--brand-3)) 1;
 }
 
 /* Soft ambient gradient blobs used as decorative background accents */

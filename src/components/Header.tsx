@@ -17,9 +17,9 @@ export default function Header() {
     <header className="glass fixed top-0 left-0 right-0 z-50 shadow-[0_8px_30px_rgba(99,102,241,0.12)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#home" className="flex items-center gap-1.5 font-heading text-lg font-bold tracking-tight text-foreground">
-          <Sparkle className="h-4 w-4 text-primary" />
+          <Sparkle className="h-4 w-4 text-ai-accent" />
           Dieci
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI</span>
+          <span className="text-gradient-brand">AI</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -36,7 +36,7 @@ export default function Header() {
 
         <a
           href="#contact"
-          className="hidden cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-dark px-5 py-2 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(99,102,241,0.4)] transition-transform hover:scale-105 md:inline-block"
+          className="bg-gradient-brand hidden cursor-pointer rounded-full px-5 py-2 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(79,70,229,0.4)] transition-transform hover:scale-105 md:inline-block"
         >
           Get in touch
         </a>
@@ -74,7 +74,7 @@ export default function Header() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="cursor-pointer rounded-lg bg-gradient-to-r from-primary to-primary-dark px-3 py-2 text-center text-sm font-semibold text-white"
+            className="bg-gradient-brand cursor-pointer rounded-lg px-3 py-2 text-center text-sm font-semibold text-white"
           >
             Get in touch
           </a>

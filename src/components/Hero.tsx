@@ -13,12 +13,7 @@ const SLIDES = [
   "/images/hero/7988218.jpg",
 ];
 
-const OFFERINGS = [
-  { label: "Web Apps", color: "from-primary to-primary-dark" },
-  { label: "Mobile Apps", color: "from-accent to-emerald-600" },
-  { label: "System Apps", color: "from-sky to-blue-600" },
-  { label: "AI Integration", color: "from-pink to-fuchsia-600" },
-];
+const OFFERINGS = ["Web Apps", "Mobile Apps", "System Apps", "AI Integration"];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -51,8 +46,8 @@ export default function Hero() {
       </div>
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="blob h-[26rem] w-[26rem] bg-primary/40 -top-32 -left-32" />
-        <div className="blob h-[22rem] w-[22rem] bg-accent/30 top-40 right-10" style={{ animationDelay: "2s" }} />
+        <div className="blob h-[26rem] w-[26rem] bg-brand-2/40 -top-32 -left-32" />
+        <div className="blob h-[22rem] w-[22rem] bg-ai-accent/30 top-40 right-10" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-16">
@@ -68,9 +63,7 @@ export default function Hero() {
 
           <p className="mt-5 max-w-xl text-xl font-medium leading-snug text-white/95">
             Local business expertise, paired with{" "}
-            <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent">
-              AI-supported development
-            </span>
+            <span className="text-gradient-brand-light">AI-supported development</span>
             , to help Belfast and Northern Ireland businesses take a leap
             forward.
           </p>
@@ -82,7 +75,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 inline-flex max-w-lg items-start gap-3 rounded-2xl border border-white/15 bg-black/35 px-4 py-3 backdrop-blur-md">
-            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-emerald-600 text-white">
+            <span className="bg-gradient-brand mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M20 6L9 17l-5-5" />
               </svg>
@@ -96,10 +89,10 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             {OFFERINGS.map((item) => (
               <span
-                key={item.label}
-                className={`rounded-full bg-gradient-to-r ${item.color} px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition-transform hover:scale-105`}
+                key={item}
+                className="bg-gradient-brand rounded-full px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition-transform hover:scale-105"
               >
-                {item.label}
+                {item}
               </span>
             ))}
           </div>
@@ -107,13 +100,13 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-dark px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(99,102,241,0.55)] transition-transform hover:scale-105"
+              className="bg-gradient-brand cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(79,70,229,0.55)] transition-transform hover:scale-105"
             >
               Start a project
             </a>
             <a
               href="#portfolio"
-              className="glass cursor-pointer rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
+              className="glass-dark cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
             >
               See our work
             </a>

@@ -16,17 +16,17 @@ export default function Contact() {
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-6 py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="blob h-[24rem] w-[24rem] bg-primary/20 top-0 left-1/2 -translate-x-1/2" />
+        <div className="blob h-[24rem] w-[24rem] bg-brand-2/20 top-0 left-1/2 -translate-x-1/2" />
       </div>
 
       <div className="relative grid gap-12 overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-12 lg:grid-cols-2">
         <div
           aria-hidden="true"
-          className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl"
+          className="bg-gradient-brand absolute -right-16 -top-16 h-64 w-64 rounded-full opacity-20 blur-2xl"
         />
 
         <div className="relative">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          <div className="text-ai-accent mb-4 inline-flex items-center gap-2 rounded-full bg-ai-accent/10 px-4 py-1.5 text-sm font-semibold">
             <Sparkle className="h-4 w-4" />
             Let&apos;s talk
           </div>
@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="mt-8 space-y-3 text-sm text-muted">
             <p>
               <span className="font-medium text-foreground">Email: </span>
-              <a href={`mailto:${email}`} className="cursor-pointer text-primary hover:text-primary-dark">
+              <a href={`mailto:${email}`} className="text-brand-1 hover:text-brand-2 cursor-pointer">
                 {email}
               </a>
             </p>
@@ -91,7 +91,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status !== "idle"}
-            className="w-full cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-dark px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(99,102,241,0.4)] transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+            className="bg-gradient-brand w-full cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(79,70,229,0.4)] transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
           >
             {status === "sent"
               ? "Message sent"
