@@ -63,14 +63,18 @@ export default function Hero() {
           </div>
 
           <h1 className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-            We build software,{" "}
+            Let&apos;s make your website successful
+          </h1>
+
+          <p className="mt-5 max-w-xl text-xl font-medium leading-snug text-white/95">
+            We build/improve your website, apps, and systems{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent">
               faster and smarter
             </span>
             , with AI at the core.
-          </h1>
+          </p>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/80">
+          <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/80">
             Dieci AI designs and ships AI-assisted web, mobile, and system
             applications — and helps you weave AI into the systems you
             already run.
