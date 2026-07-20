@@ -76,12 +76,10 @@ export default function HowWeHelp() {
       </div>
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {USE_CASES.map((item, i) => (
+        {USE_CASES.map((item) => (
           <div
             key={item.title}
-            className={`group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(79,70,229,0.18)] ${
-              i === 0 ? "lg:col-span-2" : ""
-            }`}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(79,70,229,0.18)]"
           >
             <div
               className={`${item.color} absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-10 transition-transform duration-300 group-hover:scale-125`}
