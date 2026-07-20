@@ -31,11 +31,12 @@ export default function Contact() {
             Let&apos;s talk
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Let&apos;s build something together
+            Let&apos;s get your business sorted
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
-            Tell us about your project and we&apos;ll get back to you within
-            one business day.
+            Clear task? Not sure where to start? Somewhere in between? Let us
+            know your ideas and projects, and we&apos;ll get back to you
+            shortly.
           </p>
 
           <div className="mt-8 space-y-3 text-sm text-muted">
