@@ -81,6 +81,18 @@ export default function Hero() {
             already run.
           </p>
 
+          <div className="glass mt-6 inline-flex max-w-lg items-start gap-3 rounded-2xl bg-white/10 px-4 py-3">
+            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-emerald-600 text-white">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </span>
+            <p className="text-sm leading-snug text-white/90">
+              <span className="font-semibold text-white">Decades of hands-on experience as local developers</span>
+              {" "}— combined with AI, it&apos;s the best recipe for successful projects.
+            </p>
+          </div>
+
           <div className="mt-8 flex flex-wrap gap-3">
             {OFFERINGS.map((item) => (
               <span
