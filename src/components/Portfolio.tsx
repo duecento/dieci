@@ -4,18 +4,21 @@ const PROJECTS = [
     tag: "Hospitality booking site",
     description:
       "A boutique short-let booking site with live availability, dynamic pricing, and a reservation flow tailored to a Victorian townhouse rental in Belfast.",
+    color: "bg-gradient-brand-1",
   },
   {
     name: "MyStayPerks",
     tag: "Guest-perks SaaS platform",
     description:
       "A perks and offers platform for short-let hosts, letting guests unlock local deals and letting hosts create AI-suggested offers in minutes.",
+    color: "bg-gradient-brand-3",
   },
   {
     name: "GallowareOS",
     tag: "System integration platform",
     description:
       "Website created from scratch for an upcoming Linux-based OS flavour.",
+    color: "bg-gradient-brand-5",
   },
 ];
 
@@ -49,7 +52,7 @@ export default function Portfolio() {
               key={project.name}
               className="border-dark-border bg-dark-surface group overflow-hidden rounded-3xl border shadow-[0_2px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
-              <div className="bg-gradient-brand relative flex aspect-[16/10] items-center justify-center overflow-hidden">
+              <div className={`${project.color} relative flex aspect-[16/10] items-center justify-center overflow-hidden`}>
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
