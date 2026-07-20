@@ -8,6 +8,9 @@
   --primary: #6366f1;
   --primary-dark: #4f46e5;
   --accent: #10b981;
+  --pink: #ec4899;
+  --amber: #f59e0b;
+  --sky: #0ea5e9;
   --border: #e4e4e9;
 }
 
@@ -19,6 +22,9 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
+  --color-pink: var(--pink);
+  --color-amber: var(--amber);
+  --color-sky: var(--sky);
   --color-border: var(--border);
   --font-heading: var(--font-outfit);
   --font-sans: var(--font-work-sans);
@@ -28,6 +34,38 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Glass surface for floating/overlay elements */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Soft ambient gradient blobs used as decorative background accents */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -24px) scale(1.06); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

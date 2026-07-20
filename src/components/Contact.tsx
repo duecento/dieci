@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Sparkle from "./Sparkle";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
@@ -13,10 +14,23 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
-      <div className="grid gap-12 rounded-3xl border border-border bg-surface p-8 shadow-sm sm:p-12 lg:grid-cols-2">
-        <div>
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <section id="contact" className="relative mx-auto max-w-6xl px-6 py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="blob h-[24rem] w-[24rem] bg-primary/20 top-0 left-1/2 -translate-x-1/2" />
+      </div>
+
+      <div className="relative grid gap-12 overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-12 lg:grid-cols-2">
+        <div
+          aria-hidden="true"
+          className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl"
+        />
+
+        <div className="relative">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            <Sparkle className="h-4 w-4" />
+            Let&apos;s talk
+          </div>
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Let&apos;s build something together
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
@@ -27,14 +41,14 @@ export default function Contact() {
           <div className="mt-8 space-y-3 text-sm text-muted">
             <p>
               <span className="font-medium text-foreground">Email: </span>
-              <a href={`mailto:${email}`} className="cursor-pointer hover:text-foreground">
+              <a href={`mailto:${email}`} className="cursor-pointer text-primary hover:text-primary-dark">
                 {email}
               </a>
             </p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="relative space-y-4">
           <div>
             <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
               Name
@@ -44,7 +58,7 @@ export default function Contact() {
               name="name"
               type="text"
               required
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -57,7 +71,7 @@ export default function Contact() {
               name="email"
               type="email"
               required
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -70,14 +84,14 @@ export default function Contact() {
               name="message"
               rows={4}
               required
-              className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+              className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
           <button
             type="submit"
             disabled={status !== "idle"}
-            className="w-full cursor-pointer rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
+            className="w-full cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-dark px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(99,102,241,0.4)] transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
           >
             {status === "sent"
               ? "Message sent"

@@ -3,6 +3,7 @@ const USE_CASES = [
     title: "Custom web applications",
     description:
       "From marketing sites to full SaaS platforms, built with modern frameworks and AI-accelerated workflows to ship faster without cutting corners.",
+    color: "from-primary to-primary-dark",
     icon: (
       <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zM4 9h16M9 21V9" />
     ),
@@ -11,6 +12,7 @@ const USE_CASES = [
     title: "Mobile apps, iOS & Android",
     description:
       "Native and cross-platform mobile apps designed for real users, backed by AI features like smart search, recommendations, and automation.",
+    color: "from-accent to-emerald-600",
     icon: (
       <path d="M9 3h6a2 2 0 012 2v14a2 2 0 01-2 2H9a2 2 0 01-2-2V5a2 2 0 012-2zM11 18h2" />
     ),
@@ -19,6 +21,7 @@ const USE_CASES = [
     title: "System & backend engineering",
     description:
       "Reliable backends, integrations, and internal tools — architected to scale, monitored properly, and maintainable long after launch.",
+    color: "from-sky to-blue-600",
     icon: (
       <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v3H4V6zM4 15a2 2 0 012-2h12a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" />
     ),
@@ -27,6 +30,7 @@ const USE_CASES = [
     title: "AI integration for existing apps",
     description:
       "Already have a product? We add AI where it counts — chat assistants, content generation, predictive features — into your current stack.",
+    color: "from-pink to-fuchsia-600",
     icon: (
       <path d="M12 2c0 3 1 5.5 2 6.5S19 10 22 10c-3 0-5.5 1-6.5 2S12 15.5 12 18c0-2.5-1-4.5-2-5.5S5 10 2 10c3 0 5.5-1 6.5-2S12 5 12 2z" />
     ),
@@ -35,6 +39,7 @@ const USE_CASES = [
     title: "AI strategy & consulting",
     description:
       "Not sure where AI fits yet? We audit your workflows and product, then map a practical, ROI-focused plan for adopting it.",
+    color: "from-amber to-orange-600",
     icon: (
       <path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" />
     ),
@@ -43,9 +48,16 @@ const USE_CASES = [
 
 export default function HowWeHelp() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="services" className="relative mx-auto max-w-6xl px-6 py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="blob h-[24rem] w-[24rem] bg-sky/20 top-0 right-0" />
+      </div>
+
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          What we do
+        </span>
+        <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           How can we help you?
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-muted">
@@ -58,11 +70,16 @@ export default function HowWeHelp() {
         {USE_CASES.map((item, i) => (
           <div
             key={item.title}
-            className={`rounded-3xl border border-border bg-surface p-7 shadow-sm transition-transform duration-200 hover:scale-[1.02] ${
+            className={`group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(99,102,241,0.18)] ${
               i === 0 ? "lg:col-span-2" : ""
             }`}
           >
-            <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <div
+              className={`absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br ${item.color} opacity-10 transition-transform duration-300 group-hover:scale-125`}
+            />
+            <div
+              className={`relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-white shadow-[0_6px_16px_rgba(0,0,0,0.15)]`}
+            >
               <svg
                 width="22"
                 height="22"
@@ -77,10 +94,10 @@ export default function HowWeHelp() {
                 {item.icon}
               </svg>
             </div>
-            <h3 className="font-heading text-lg font-semibold text-foreground">
+            <h3 className="relative font-heading text-lg font-semibold text-foreground">
               {item.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
+            <p className="relative mt-2 text-sm leading-relaxed text-muted">
               {item.description}
             </p>
           </div>
