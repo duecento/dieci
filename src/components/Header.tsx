@@ -14,8 +14,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 left-4 right-4 z-50 mx-auto max-w-6xl">
-      <div className="glass flex items-center justify-between rounded-2xl px-5 py-3 shadow-[0_8px_30px_rgba(99,102,241,0.12)]">
+    <header className="glass fixed top-0 left-0 right-0 z-50 shadow-[0_8px_30px_rgba(99,102,241,0.12)]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#home" className="flex items-center gap-1.5 font-heading text-lg font-bold tracking-tight text-foreground">
           <Sparkle className="h-4 w-4 text-primary" />
           Dieci
@@ -60,7 +60,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="glass mt-2 flex flex-col gap-1 rounded-2xl p-3 shadow-sm md:hidden">
+        <nav className="glass flex flex-col gap-1 px-6 py-3 md:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
