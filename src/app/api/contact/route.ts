@@ -7,7 +7,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const NOTIFY_EMAIL = ["ivo_stuparich", "@", "hotmail", ".com"].join("");
-const FROM_ADDRESS = "Dieci AI <hello@victorianbelfast.com>";
+const FROM_EMAIL = ["hello", "@", "victorianbelfast", ".com"].join("");
+const FROM_ADDRESS = `Dieci AI <${FROM_EMAIL}>`;
 
 async function sendEmail(payload: {
   from: string;
