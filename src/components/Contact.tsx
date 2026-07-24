@@ -4,13 +4,32 @@ import { useState } from "react";
 import Sparkle from "./Sparkle";
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
   const email = ["hello", "@", "dieciai", ".com"].join("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => setStatus("sent"), 600);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -91,7 +110,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            disabled={status !== "idle"}
+            disabled={status === "submitting" || status === "sent"}
             className="bg-gradient-brand w-full cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(79,70,229,0.4)] transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
           >
             {status === "sent"
@@ -100,6 +119,16 @@ export default function Contact() {
                 ? "Sending…"
                 : "Send message"}
           </button>
+
+          {status === "error" && (
+            <p className="text-sm text-red-600">
+              Something went wrong — please email us directly at{" "}
+              <a href={`mailto:${email}`} className="underline">
+                {email}
+              </a>
+              .
+            </p>
+          )}
         </form>
       </div>
     </section>
