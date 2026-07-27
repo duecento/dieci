@@ -1,21 +1,24 @@
 const PROJECTS = [
   {
     name: "The Victorian",
-    tag: "Hospitality booking site",
+    category: "Online booking",
+    tags: ["Calendar API sync", "Website design", "AEO/SEO optimisation"],
     description:
       "A boutique short-let booking site with live availability, dynamic pricing, and a reservation flow tailored to a Victorian townhouse rental in Belfast.",
     color: "bg-gradient-brand-1",
   },
   {
     name: "MyStayPerks",
-    tag: "Guest-perks SaaS platform",
+    category: "Business app",
+    tags: ["Greenfield", "AI content generation", "Hybrid mobile app"],
     description:
       "A perks and offers platform for short-let hosts, letting guests unlock local deals and letting hosts create AI-suggested offers in minutes.",
     color: "bg-gradient-brand-3",
   },
   {
     name: "GallowareOS",
-    tag: "System integration platform",
+    category: "Website",
+    tags: ["Web design", "Logo creation", "AEO/SEO optimisation"],
     description:
       "Website created from scratch for an upcoming Linux-based OS flavour.",
     color: "bg-gradient-brand-5",
@@ -68,12 +71,22 @@ export default function Portfolio() {
               </div>
               <div className="p-6">
                 <p className="text-ai-accent text-xs font-bold uppercase tracking-wide">
-                  {project.tag}
+                  {project.category}
                 </p>
                 <h3 className="mt-1 font-heading text-lg font-semibold text-white">
                   {project.name}
                 </h3>
-                <p className="text-dark-muted mt-2 text-sm leading-relaxed">
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="border-dark-border text-dark-muted rounded-full border px-2.5 py-1 text-xs font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-dark-muted mt-3 text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
