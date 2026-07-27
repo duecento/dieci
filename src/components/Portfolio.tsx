@@ -1,3 +1,5 @@
+import Sparkle from "./Sparkle";
+
 const PROJECTS = [
   {
     name: "The Victorian",
@@ -68,11 +70,7 @@ export default function Portfolio() {
                   aria-hidden="true"
                   className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
                 />
-                <div className="absolute left-3 top-2.5 flex gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-white/40" />
-                  <span className="h-2 w-2 rounded-full bg-white/40" />
-                  <span className="h-2 w-2 rounded-full bg-white/40" />
-                </div>
+                <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white/70" />
                 <span className="relative font-heading text-xl font-bold text-white drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
                   {project.name}
                 </span>
