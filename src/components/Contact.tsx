@@ -50,7 +50,7 @@ export default function Contact() {
             Let&apos;s talk
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Let&apos;s get your business sorted
+            Let&apos;s get your business AI sorted
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
             Clear task? Not sure where to start? Somewhere in between? Let us
