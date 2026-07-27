@@ -63,17 +63,17 @@ export default function Portfolio() {
               key={project.name}
               className="border-dark-border bg-dark-surface group overflow-hidden rounded-3xl border shadow-[0_2px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
-              <div className={`${project.color} relative flex aspect-[16/10] items-center justify-center overflow-hidden`}>
+              <div className={`${project.color} relative flex aspect-[24/5] items-center justify-center overflow-hidden`}>
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
                 />
-                <div className="absolute left-4 top-4 flex gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
+                <div className="absolute left-3 top-2.5 flex gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-white/40" />
+                  <span className="h-2 w-2 rounded-full bg-white/40" />
+                  <span className="h-2 w-2 rounded-full bg-white/40" />
                 </div>
-                <span className="relative font-heading text-2xl font-bold text-white drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <span className="relative font-heading text-xl font-bold text-white drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
                   {project.name}
                 </span>
               </div>
