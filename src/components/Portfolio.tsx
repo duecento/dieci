@@ -23,6 +23,14 @@ const PROJECTS = [
       "Website created from scratch for an upcoming Linux-based OS flavour.",
     color: "bg-gradient-brand-5",
   },
+  {
+    name: "Comfort Studio",
+    category: "IT/AI Consulting",
+    tags: ["Website review", "Manual & AI-assisted evaluation", "SEO/AEO analysis"],
+    description:
+      "Assignment to generate a report for Comfort Studio's e-commerce website: identifying issues, evaluating risks, and suggesting improvements and AI enhancements.",
+    color: "bg-gradient-brand-2",
+  },
 ];
 
 export default function Portfolio() {
@@ -49,7 +57,7 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div
               key={project.name}
