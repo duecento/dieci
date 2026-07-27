@@ -9,6 +9,7 @@ const PROJECTS = [
     description:
       "A boutique short-let booking site with live availability, dynamic pricing, and a reservation flow tailored to a Victorian townhouse rental in Belfast.",
     image: "/images/portfolio/thevictorian.webp",
+    url: "https://victorianbelfast.com",
   },
   {
     name: "MyStayPerks",
@@ -17,6 +18,7 @@ const PROJECTS = [
     description:
       "A perks and offers platform for short-let hosts, letting guests unlock local deals and letting hosts create AI-suggested offers in minutes.",
     image: "/images/portfolio/mystayperks.png",
+    url: "https://mystayperks.com",
   },
   {
     name: "GallowareOS",
@@ -25,6 +27,7 @@ const PROJECTS = [
     description:
       "Website created from scratch for an upcoming Linux-based OS flavour.",
     image: "/images/portfolio/galloware.webp",
+    url: "https://galloware.net",
   },
   {
     name: "Comfort Studio",
@@ -33,6 +36,7 @@ const PROJECTS = [
     description:
       "Assignment to generate a report for Comfort Studio's e-commerce website: identifying issues, evaluating risks, and suggesting improvements and AI enhancements.",
     image: "/images/portfolio/comfortstudio.png",
+    url: null,
   },
 ];
 
@@ -66,20 +70,46 @@ export default function Portfolio() {
               key={project.name}
               className="border-dark-border bg-dark-surface group overflow-hidden rounded-3xl border shadow-[0_2px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
-              <div className="relative aspect-[24/9] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={`${project.name} screenshot`}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                />
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Opens in new tab"
+                  className="relative block aspect-[24/9] cursor-pointer overflow-hidden"
+                >
+                  <Image
+                    src={project.image}
+                    alt="Opens in new tab"
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                  />
+                  <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white drop-shadow" />
+                </a>
+              ) : (
                 <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
-                />
-                <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white drop-shadow" />
-              </div>
+                  title="Confidential report - NDA agreement"
+                  className="relative aspect-[24/9] overflow-hidden"
+                >
+                  <Image
+                    src={project.image}
+                    alt="Confidential report - NDA agreement"
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                  />
+                  <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white drop-shadow" />
+                </div>
+              )}
               <div className="p-6">
                 <p className="text-ai-accent text-xs font-bold uppercase tracking-wide">
                   {project.category}
