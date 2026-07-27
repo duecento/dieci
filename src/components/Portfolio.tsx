@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Sparkle from "./Sparkle";
 
 const PROJECTS = [
@@ -7,7 +8,7 @@ const PROJECTS = [
     tags: ["Calendar API sync", "Website design", "AEO/SEO optimisation"],
     description:
       "A boutique short-let booking site with live availability, dynamic pricing, and a reservation flow tailored to a Victorian townhouse rental in Belfast.",
-    color: "bg-gradient-brand-1",
+    image: "/images/portfolio/thevictorian.webp",
   },
   {
     name: "MyStayPerks",
@@ -15,7 +16,7 @@ const PROJECTS = [
     tags: ["Greenfield", "AI content generation", "Hybrid mobile app"],
     description:
       "A perks and offers platform for short-let hosts, letting guests unlock local deals and letting hosts create AI-suggested offers in minutes.",
-    color: "bg-gradient-brand-3",
+    image: "/images/portfolio/mystayperks.png",
   },
   {
     name: "GallowareOS",
@@ -23,7 +24,7 @@ const PROJECTS = [
     tags: ["Web design", "Logo creation", "AEO/SEO optimisation"],
     description:
       "Website created from scratch for an upcoming Linux-based OS flavour.",
-    color: "bg-gradient-brand-5",
+    image: "/images/portfolio/galloware.webp",
   },
   {
     name: "Comfort Studio",
@@ -31,7 +32,7 @@ const PROJECTS = [
     tags: ["Website review", "Manual & AI-assisted evaluation", "SEO/AEO analysis"],
     description:
       "Assignment to generate a report for Comfort Studio's e-commerce website: identifying issues, evaluating risks, and suggesting improvements and AI enhancements.",
-    color: "bg-gradient-brand-2",
+    image: "/images/portfolio/comfortstudio.png",
   },
 ];
 
@@ -65,15 +66,19 @@ export default function Portfolio() {
               key={project.name}
               className="border-dark-border bg-dark-surface group overflow-hidden rounded-3xl border shadow-[0_2px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
-              <div className={`${project.color} relative flex aspect-[24/5] items-center justify-center overflow-hidden`}>
+              <div className="relative aspect-[24/9] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={`${project.name} screenshot`}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                />
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]"
+                  className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
                 />
-                <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white/70" />
-                <span className="relative font-heading text-xl font-bold text-white drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
-                  {project.name}
-                </span>
+                <Sparkle className="absolute left-3 top-2.5 h-4 w-4 text-white drop-shadow" />
               </div>
               <div className="p-6">
                 <p className="text-ai-accent text-xs font-bold uppercase tracking-wide">
