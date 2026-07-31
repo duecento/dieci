@@ -6,6 +6,7 @@ const PROJECTS = [
     name: "The Victorian",
     category: "Online booking",
     tags: ["Calendar API sync", "Website design", "AEO/SEO optimisation"],
+    aiTools: ["Claude Code", "Higgsfield", "Claude Cowork", "Copilot"],
     description:
       "A boutique short-let booking site with live availability, dynamic pricing, and a reservation flow tailored to a Victorian townhouse rental in Belfast.",
     image: "/images/portfolio/thevictorian.webp",
@@ -15,6 +16,7 @@ const PROJECTS = [
     name: "MyStayPerks",
     category: "Business app",
     tags: ["Greenfield", "AI content generation", "Hybrid mobile app"],
+    aiTools: ["Claude Code", "Gemini Flash", "Gemini Flash-lite"],
     description:
       "A perks and offers platform for short-let hosts, letting guests unlock local deals and letting hosts create AI-suggested offers in minutes.",
     image: "/images/portfolio/mystayperks.png",
@@ -24,6 +26,7 @@ const PROJECTS = [
     name: "GallowareOS",
     category: "Website",
     tags: ["Web design", "Logo creation", "AEO/SEO optimisation"],
+    aiTools: ["Claude Code"],
     description:
       "Website created from scratch for an upcoming Linux-based OS flavour.",
     image: "/images/portfolio/galloware.webp",
@@ -33,6 +36,7 @@ const PROJECTS = [
     name: "Comfort Studio",
     category: "IT/AI Consulting",
     tags: ["Website review", "Manual & AI-assisted evaluation", "SEO/AEO analysis"],
+    aiTools: [],
     description:
       "Assignment to generate a report for Comfort Studio's e-commerce website: identifying issues, evaluating risks, and suggesting improvements and AI enhancements.",
     image: "/images/portfolio/comfortstudio.png",
@@ -124,6 +128,14 @@ export default function Portfolio() {
                       className="border-dark-border text-dark-muted rounded-full border px-2.5 py-1 text-xs font-medium"
                     >
                       {tag}
+                    </span>
+                  ))}
+                  {project.aiTools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="bg-gradient-brand rounded-full px-2.5 py-1 text-xs font-medium text-white"
+                    >
+                      {tool}
                     </span>
                   ))}
                 </div>
