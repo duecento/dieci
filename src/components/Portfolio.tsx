@@ -36,7 +36,7 @@ const PROJECTS = [
     name: "Comfort Studio",
     category: "IT/AI Consulting",
     tags: ["Website review", "Manual & AI-assisted evaluation", "SEO/AEO analysis"],
-    aiTools: [],
+    aiTools: ["Claude Cowork"],
     description:
       "Assignment to generate a report for Comfort Studio's e-commerce website: identifying issues, evaluating risks, and suggesting improvements and AI enhancements.",
     image: "/images/portfolio/comfortstudio.png",
@@ -125,7 +125,7 @@ export default function Portfolio() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border-dark-border text-dark-muted rounded-full border px-2.5 py-1 text-xs font-medium"
+                      className="bg-ai-accent/10 border-ai-accent/30 text-ai-accent rounded-full border px-2.5 py-1 text-xs font-medium"
                     >
                       {tag}
                     </span>
