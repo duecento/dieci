@@ -43,10 +43,10 @@ const PROJECTS = [
     url: null,
   },
   {
-    name: "Comfort Studio MVP Demo Website",
+    name: "Comfort Studio Demo Website",
     category: "E-commerce rebuild",
-    tags: ["UX improvements", "Website design", "AEO/SEO optimisation"],
-    aiTools: ["Claude Code", "Claude Cowork", "Copilot"],
+    tags: ["MVP", "Strategic rebuild", "Website design"],
+    aiTools: ["Claude Code", "Claude Cowork", "UI/UX Pro Max"],
     description:
       "A rebuilt demo of Comfort Studio's e-commerce site, addressing the issues and risks identified in the audit with a cleaner UX and fixed product flows.",
     image: "/images/portfolio/comfort_studio_demo.png",
@@ -55,10 +55,10 @@ const PROJECTS = [
   {
     name: "Tommy Alexander Motors",
     category: "Dealership website",
-    tags: ["Stock browsing & filtering", "Website design", "AEO/SEO optimisation"],
-    aiTools: ["Claude Code", "Claude Cowork", "UI/UX Pro Max"],
+    tags: ["Stock browsing & filtering", "Resend integration", "Supabase"],
+    aiTools: ["Claude Code", "UI/UX Pro Max", "Copilot"],
     description:
-      "A used car dealership site for Belfast/Holywood, with filterable stock listings, verified mileage and inspection badges, and a reservation flow for buyers.",
+      "A used car dealership website with filterable stock listings, modern slick UI effects, admin back-office with car stock management, and reservation flow for buyers.",
     image: "/images/portfolio/tommy_alexander_car_sales.png",
     url: "https://car-sales-steel.vercel.app",
   },
