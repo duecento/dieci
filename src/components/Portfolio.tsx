@@ -43,6 +43,16 @@ const PROJECTS = [
     url: null,
   },
   {
+    name: "Comfort Studio MVP Demo Website",
+    category: "E-commerce rebuild",
+    tags: ["UX improvements", "Website design", "AEO/SEO optimisation"],
+    aiTools: ["Claude Code", "Claude Cowork", "Copilot"],
+    description:
+      "A rebuilt demo of Comfort Studio's e-commerce site, addressing the issues and risks identified in the audit with a cleaner UX and fixed product flows.",
+    image: "/images/portfolio/comfort_studio_demo.png",
+    url: "https://comfort-studio-gold.vercel.app",
+  },
+  {
     name: "Tommy Alexander Motors",
     category: "Dealership website",
     tags: ["Stock browsing & filtering", "Website design", "AEO/SEO optimisation"],
