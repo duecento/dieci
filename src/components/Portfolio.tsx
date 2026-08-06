@@ -42,6 +42,16 @@ const PROJECTS = [
     image: "/images/portfolio/comfortstudio.png",
     url: null,
   },
+  {
+    name: "Tommy Alexander Motors",
+    category: "Dealership website",
+    tags: ["Stock browsing & filtering", "Website design", "AEO/SEO optimisation"],
+    aiTools: ["Claude Code", "Claude Cowork", "UI/UX Pro Max"],
+    description:
+      "A used car dealership site for Belfast/Holywood, with filterable stock listings, verified mileage and inspection badges, and a reservation flow for buyers.",
+    image: "/images/portfolio/tommy_alexander_car_sales.png",
+    url: "https://car-sales-steel.vercel.app",
+  },
 ];
 
 export default function Portfolio() {
